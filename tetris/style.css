@@ -1,0 +1,193 @@
+:root {
+  --color-bg-start: #07121d;
+  --color-bg-end: #0b2a47;
+  --color-canvas-bg-start: #003547;
+  --color-canvas-bg-end: #005e7a;
+  --color-accent-light: #00e5ff;
+  --color-accent-dark: #008ba3;
+  --color-accent-shadow: rgba(0, 229, 255, 0.6);
+  --color-text-light: #d0f0fa;
+  --color-text-highlight: #80deea;
+  --color-error: #ff6161;
+  --color-button-text: #00333f;
+  --color-button-bg-start: #00d8f9;
+  --color-button-bg-end: #00a8b5;
+  --color-button-hover-start: #00a8b5;
+  --color-button-hover-end: #007a82;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-bg-start), var(--color-bg-end));
+  color: var(--color-text-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gameContainer {
+  display: flex;
+  background: linear-gradient(135deg, #002f4bbb, #004466dd);
+  border-radius: 22px;
+  box-shadow: 0 0 50px var(--color-accent-shadow);
+  padding: 24px 36px;
+  width: 680px;
+  max-width: 95vw;
+  height: 440px;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+#gameArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Canvas Tetris */
+canvas#tetris {
+  background: linear-gradient(180deg, var(--color-canvas-bg-start), var(--color-canvas-bg-end));
+  box-shadow:
+    0 0 40px var(--color-accent-shadow),
+    inset 0 0 25px #00f0ff55;
+  border-radius: 14px;
+  border: 5px solid var(--color-accent-light);
+  width: 300px;
+  height: 600px;
+  image-rendering: pixelated;
+  transition: box-shadow 0.3s ease;
+}
+
+canvas#tetris:hover {
+  box-shadow:
+    0 0 60px var(--color-accent-shadow),
+    inset 0 0 35px #00f0ff88;
+}
+
+/* Pravý sidebar pro info a menu */
+#sidePanel {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-left: 24px;
+  gap: 30px;
+}
+
+/* Next piece */
+#nextPiece {
+  background: linear-gradient(135deg, #00657a, #003540);
+  border-radius: 14px;
+  border: 4px solid var(--color-accent-light);
+  box-shadow: 0 0 28px var(--color-accent-shadow);
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 14px auto;
+  image-rendering: pixelated;
+}
+
+/* Info panel */
+#infoPanel {
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--color-text-highlight);
+  text-shadow: 0 0 12px var(--color-accent-shadow);
+  user-select: none;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Menu tlačítka */
+#menu button {
+  font-size: 1.3rem;
+  padding: 14px 26px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--color-button-bg-start), var(--color-button-bg-end));
+  border: none;
+  border-radius: 20px;
+  color: var(--color-button-text);
+  font-weight: 800;
+  box-shadow: 0 8px 22px #00d8f9cc;
+  transition: background 0.35s ease, transform 0.15s ease, box-shadow 0.35s ease;
+  user-select: none;
+  width: 100%;
+  letter-spacing: 0.03em;
+}
+
+#menu button:disabled {
+  background: #00717766;
+  cursor: default;
+  box-shadow: none;
+  color: #004f4faa;
+}
+
+#menu button:hover:not(:disabled) {
+  background: linear-gradient(45deg, var(--color-button-hover-start), var(--color-button-hover-end));
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px var(--color-accent-shadow);
+}
+
+#menu button:active:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--color-accent-shadow);
+}
+
+/* Game status */
+#gameStatus {
+  font-size: 1.45rem;
+  color: var(--color-error);
+  text-align: center;
+  text-shadow: 0 0 12px #ff5a5aaa;
+  min-height: 38px;
+  user-select: none;
+  font-weight: 700;
+}
+
+/* Score a level */
+#score, #level {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--color-accent-light);
+  text-shadow: 0 0 14px var(--color-accent-shadow);
+  margin-bottom: 6px;
+  user-select: none;
+  text-align: center;
+}
+
+/* Responsivní úprava na mobil */
+@media (max-width: 700px) {
+  #gameContainer {
+    flex-direction: column;
+    width: 90vw;
+    height: auto;
+  }
+  #gameArea {
+    justify-content: center;
+  }
+  canvas#tetris {
+    width: 90vw;
+    height: calc(90vw * 2);
+    max-height: 600px;
+  }
+  #sidePanel {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 24px;
+  }
+  #menu button {
+    font-size: 1.2rem;
+  }
+}
