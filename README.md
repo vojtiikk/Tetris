@@ -22,6 +22,6 @@ Navrženo pro plynulý a příjemný zážitek s responzivním designem, barevn�
 
 ## Jak spustit
 
-1. Naklonujte nebo stáhněte repozitář  
-   ```bash
-   git clone https://github.com/tvuj-uzivatel/tetris.git
+🔗 Zahraj si online
+✅ 
+Nemusíš nic stahovat – hra běží přímo v prohlížeči (PC i mobil).
