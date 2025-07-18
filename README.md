@@ -24,12 +24,12 @@ Navrženo pro plynulý a příjemný zážitek s responzivním designem, barevn�
 
 🔗 Zahraj si online
 ✅ https://vojtiikk.github.io/Tetris/
-Nemusíš nic stahovat – hra běží přímo v prohlížeči (PC i mobil).
+-Nemusíš nic stahovat – hra běží přímo v prohlížeči (PC i mobil).
 
 ## 📅 Budoucí aktualizace
-Aktivní vývoj pokračuje. Do budoucna chystáme:
-Multiplayer mód
-Zvuky a hudbu
-Výběr skinů bloků
-Vylepšený leaderboard
-Ukládání highscore přes backend
+-Aktivní vývoj pokračuje. Do budoucna chystáme:
+-Multiplayer mód
+-Zvuky a hudbu
+-Výběr skinů bloků
+-Vylepšený leaderboard
+-Ukládání highscore přes backend
