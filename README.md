@@ -23,5 +23,5 @@ Navrženo pro plynulý a příjemný zážitek s responzivním designem, barevn�
 ## Jak spustit
 
 🔗 Zahraj si online
-✅ 
+✅ https://vojtiikk.github.io/Tetris/
 Nemusíš nic stahovat – hra běží přímo v prohlížeči (PC i mobil).
